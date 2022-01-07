@@ -48,4 +48,13 @@ const getPoke = async () => {
   return apiPokes.concat(dbPokes);
 };
 
-module.exports = { getPoke, getApi, getDb };
+const getTypes = async () => {
+  const { data: type } = await axios.get("https://pokeapi.co/api/v2/type");
+  type.results.forEach((ty) => {
+    Type.create({
+      name: ty.name,
+    });
+  });
+};
+
+module.exports = { getPoke, getApi, getDb, getTypes };

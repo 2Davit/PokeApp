@@ -1,7 +1,11 @@
 const { Router } = require("express");
+const { Type } = require("../db");
 
 const router = Router();
 
-router.get("/type", async (req, res) => {});
+router.get("/", async (req, res) => {
+  const types = await Type.findAll();
+  res.status(200).send(types);
+});
 
 module.exports = router;
