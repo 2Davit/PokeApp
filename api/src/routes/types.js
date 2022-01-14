@@ -1,4 +1,5 @@
 const { Router } = require("express");
+const { getTypes } = require("../controllers/controllers");
 const { Type } = require("../db");
 
 const router = Router();

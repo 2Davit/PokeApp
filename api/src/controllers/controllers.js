@@ -15,7 +15,7 @@ const getApi = async () => {
   const response = await Promise.all(eachPokeReq);
 
   response.forEach((res) => {
-    pokeData = res.data;
+    const pokeData = res.data;
     pokemons.push({
       id: pokeData.id,
       name: pokeData.name,
